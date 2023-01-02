@@ -5,5 +5,43 @@ san--storage area network-high speed network provides access to storage (transfe
 system area network -uniquely designed for high speed interconnection in a cluster
 vpn-lets user send and receive data as devices were connected to private network
 
+OSI Model
+conceptual model, communicate using standard protocol
+7.Application layer -human computer interaction layer, application access network services eg http,ftp,smtp,dns
+6.presentation layer-ensures data is in usable format , encryption &decr
+5.session layer- maintain session and responsible for controlling ports and session (setup, cordination and termination between applications)
+4.trasport layer- transport data using tcp/udp
+3.network layer-decides which physical path the data will take, packet forwarding including routing
+2.data link layer -decides format of the data on network. charge of data encapsulation under form of packets
+1.physical layer-transmit raw bit stream on physical medium
+
+TCP / IP Model
+internet uses for communication
+Application Layer- defines the protocol which enables user to interact with the network.ftp, http
+Transport Layer-defines how data should flow between hosts.tcp ensures data delivered within hosts in order abd responsible for end-to-end delivery
+Internet layer-IP works on this layer, facilitates host addressing and recognition, defines routing
+Network-Access Layer -same function 3,2,1 in osi model
+
+OSI MODEL            TCP/IP MODEL            TCP/IP SUITE
+Application
+presentation         Application layer       http,smtp,telnet,ftp,dns,snmp
+session
+
+transport           transport                tcp/udp
+
+network              internet                idhp , icmp
+
+datalink
+physical             network access layer     ethernet
+
+-----------------------------
+protocol- standardized way of doing certain actions so two and more devices are able to communicate each other
+addressing and routing of messages, error detection and recovery
+
+
+
+
+
+
 
 
