@@ -38,6 +38,34 @@ physical             network access layer     ethernet
 protocol- standardized way of doing certain actions so two and more devices are able to communicate each other
 addressing and routing of messages, error detection and recovery
 
+tcp-used for communicationg over network, divides message into seriesof packets sent from source to dest. ressaembled at dest.
+ip-addressing protocol, help in routing through diff nodes until it reaches dest.
+udp-for loss tolerating and low-latency links between diff applications
+pop-receiving incoming emails
+smtp- send and distribute outgoing email
+ftp-transfer files from one to another
+http-designed for transferring hypertext among 2 or more systems, client-server model
+https- encrypted
+ssh- secure shell-secure way to access a computer over an unsecured network
+dhcp- automate the assignment of ip in a network
+
+tcp-connection oriented means once a connection has been extablished, data can be transmitted in 2 directions.built in system to check for error and guarantee data 
+    deliver in order, reliable .feedback mechanism result in large overghead , greater use of available bandwidth
+udp- connectionless internet protocol, error-checking and recovery is not-required, data continuously sent whethet received or not
+
+dns -dns resolver , domain converted to ip
+
+
+class A - 0.0.0.0 to 127.0.0.0           very large networks
+class B - 128.0.0.0 to 191.255.0.0       medium or institution sized network
+class C - 192.0.0.0 to 223.255.255.0     home network
+class D - 224.0.0.0 to 239.255.255.255
+class E - 240.0.0.0 to 255.255.255.255
+
+router- connects 2 or more packet switched networks, managing traffic forwarding data packets to intended ip ,allow multiple device to use same internet
+switch- connects devices within a network, forwards data packets to and fro. switch only sends to a single device
+firewall-monitor and control incoming and outgoing network traffic
+
 
 
 
