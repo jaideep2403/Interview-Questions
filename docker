@@ -1,0 +1,83 @@
+docker practice lab:
+1.
+docker version                     --check version
+docker ps -a 
+docker images
+docker run -it --name jai redis /bin/bash
+docker start <container name>
+docker attach <container name>
+docker ps
+docker stop <container id>          --- stop the container
+docker stop $(docker ps -aq)        ---stop all conatiners at once
+docker rm $(docker ps -aq)          -- remove stopped commands
+docker rmi ubuntu                   ---delete ubuntu image
+docker pull <image name>            --- pull image from hub
+docker rmi $(docker images -aq)     --- delete all containers
+docker rmi -f <image name>          --remove forcefully
+
+
+docker volume rm $(docker volume ls -qf dangling=true)
+docker rm $(docker ps -q -f 'status=created')
+===================================================================
+2.
+Run an instance of kodekloud/simple-webapp with a tag blue and map port 8080 on the container to 38282 on the host.
+docker run -p 38282:8080 kodekloud/simple-webapp:blue
+
+-:3456->3456/tcp, 0.0.0.0:38080->80/tcp ----- ports published on container(3456,80) , ports published on host(3456,38080)
+==========================================================================
+3.
+docker build -t webapp-color .         --build docker image from the dockerfile and name it webapp-color
+docker run -p 8282:8080 webapp-color     
+docker run python:3.6 cat /etc/*release*       --check release version of os
+docker images | grep webapp-color
+docker build -t webapp-color:lite .       
+docker run -p 8383:8080 webapp-color:lite
+=============================================================================
+4.
+docker inspect <cont id> | grep -A 10 Env               ---inspect the env variables set on container
+docker run -p 38282:8080 --name blue-app -e APP_COLOR=blue -d kodekloud/simple-webapp
+docker run -d -e MYSQL_ROOT_PASSWORD=db_pass123 --name mysql-db mysql      ---Deploy a mysql database using the mysql image and name it mysql-db.
+To know the env field from within a mysql-db container, run docker       exec -it mysql-db env
+==============================================================================
+5.
+cat Dockerfile-mysql | grep ENTRYPOINT          --entrypoint of mysql file
+cat Dockerfile-wordpress | grep CMD
+Run an instance of the ubuntu image to run the sleep 1000 command at startup.
+ Run it in detached mode.                                              ----------docker run -d ubuntu sleep 1000
+===================================================================================================================
+6.
+docker run --name=redis -d redis:alpine           ---run a conatainer name redis from image redis:alpine
+docker run -d --name=clickcounter --link redis:redis -p 8085:5000 kodekloud/click-counter     --create annd link with previous container
+docker stop <container id>        --stop and delete containers
+docker rm <conatiner id>
+pwd
+cd /root/clickcounter
+vi docker-compose.yml
+docker-compose up
+=========================================================================================================================
+7
+cd /var/lib/docker  ---files related to containers are stored
+docker run -d --name=mysql-db -e MYSQL_ROOT_PASSWORD=db_pass123 mysql
+docker run -v /opt/data:/var/lib/mysql -d --name mysql-db -e MYSQL_ROOT_PASSWORD=db_pass123 mysql
+============================================================================================
+8
+ docker network ls         --no of networks on the system
+docker network inspect bridge
+docker run --name alpine-2 --network=none alpine
+docker network create --driver bridge --subnet 182.18.0.1/24 --gateway 182.18.0.1 wp-mysql-network 
+docker run -d -e MYSQL_ROOT_PASSWORD=db_pass123 --name mysql-db --network wp-mysql-network mysql:5.6
+docker run --network=wp-mysql-network -e DB_Host=mysql-db -e DB_Password=db_pass123 -p 38080:8080 --name webapp --link mysql-db:mysql-db -d kodekloud/simple-webapp-mysql
+
+
+=======================================================================================================
+
+
+
+
+
+
+
+
+
+
+
