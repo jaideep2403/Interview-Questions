@@ -1,0 +1,6 @@
+dockerfile- text file , contains commands to create an image
+           docker build -t name
+docker compose -tool allows to run multi - cotainer docker applications
+--docker-compose up
+--docker-compose down
+
