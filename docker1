@@ -4,3 +4,32 @@ docker compose -tool allows to run multi - cotainer docker applications
 --docker-compose up
 --docker-compose down
 
+-------------------------------------------------------
+CMD - overwrites
+ENTRYPOINT - does not over write and append
+
+vi Dockerfile
+FROM centos
+CMD ["echo" , "s1"]
+ENTRYPOINT ["echo" , "s2"]
+
+docker build -t v1 .
+docker build -t v2 .
+docker run v1 echo s11
+s11
+docker run v2 echo s22
+s2 s22
+-----------------------------------------------------
+COPY - copy from source to dest
+ADD - copies froms source and dest and can also download and copy to dest
+
+touch 1.txt 2.txt
+
+vi Dockerfile
+FROM centos
+COPY 1.txt /tmp
+ADD 2.txt /tmp
+
+docker build -t v1 .
+docker run v1 /bin/bash
+--------------------------------------------------------
