@@ -1,0 +1,11 @@
+---kernel panic in linux? (kernel panic - not syncing)
+initramfs gets corrupted or deleted at the stage of recent OS patching/updates other causes, face kernel panic issue while booting time
+
+produce o/p --> cd /boot --> rm initramfs.img -->reboot 
+kernel panic -- initramfs not found and not syncing --reboot in rescue mode -- cd /boot
+#rpmquery kernel
+regenerate/ recreate initramfs
+1.dracut command -  dracut -f initramfs-3.10.0-1160.el7.x86_64.img initramfs-3.10.0-1160.el7.x86_6
+2.mkinitrd command - 
+reboot 
+-------------------------------------------------------
