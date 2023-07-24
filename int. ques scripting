@@ -1,0 +1,7 @@
+1.Shell scripting   - commands in a file, automate it to run
+
+2. Purpose of #!/bin/bash (shebang) ?
+  os check for the interpreter , execute lines based on interpreter 
+   if no inyerpreter mentioned , use default interpreter   ... echo $SHELL
+   cat /etc/shells - check the shells supported 
+  
