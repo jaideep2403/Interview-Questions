@@ -1,7 +1,18 @@
-1.Shell scripting   - commands in a file, automate it to run
+1. Shell scripting   - commands in a file, automate it to run
 
-2. Purpose of #!/bin/bash (shebang) ?
-  os check for the interpreter , execute lines based on interpreter 
-   if no inyerpreter mentioned , use default interpreter   ... echo $SHELL
+2. Purpose of #!/bin/bash (shebang)?
+  os check for the interpreter, execute lines based on the interpreter 
+   if no interpreter mentioned, use default interpreter   ... (echo $SHELL)
    cat /etc/shells - check the shells supported 
+
+3. Diff in '[' and '[[' ?
+   [ -> internally calls the test command, shell built-in command 
+        gives exit code (0-success to 255) non -zero - failure    ... (echo $? --> gives the exit status)
+   [[ -> enhanced version --> pattern matching
+#shellcheck <script_name>
+#shellcheck -s bash <script_name>
+#sudo rpm -qa | grep -i shellcheck
+
+Q 4. Write a script to print prime no.?
+
   
