@@ -1,4 +1,4 @@
----kernel panic in linux? (kernel panic - not syncing)
+1. What is kernel panic in linux? (kernel panic - not syncing)
 initramfs gets corrupted or deleted at the stage of recent OS patching/updates other causes, face kernel panic issue while booting time
 
 produce o/p --> cd /boot --> rm initramfs.img -->reboot 
