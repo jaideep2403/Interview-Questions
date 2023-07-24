@@ -1,4 +1,4 @@
-1. What is kernel panic in linux? (kernel panic - not syncing)
+Q 1. What is kernel panic in linux? (kernel panic - not syncing)
 initramfs gets corrupted or deleted at the stage of recent OS patching/updates other causes, face kernel panic issue while booting time
 
 produce o/p --> cd /boot --> rm initramfs.img -->reboot 
@@ -9,3 +9,16 @@ regenerate/ recreate initramfs
 2.mkinitrd command - 
 reboot 
 -------------------------------------------------------
+Q 2. what is a process in Linux - program in execution
+
+Q 3. what is run level in Linux - A run level is an operating state of an OS . Levels (0-6)
+             Runlevels determine which programs can execute after the OS boots up.
+
+Q 4. Linux folder is 100% filled, troubleshoot.
+Q 5. server is not coming up, troubleshoot.
+
+Q 6. NFS config file - /etc/exports file.
+
+
+
+
