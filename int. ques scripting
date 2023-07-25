@@ -1,3 +1,5 @@
+echo $? - exit code stored 
+
 1. Shell scripting   - commands in a file, automate it to run
 
 2. Purpose of #!/bin/bash (shebang)?
@@ -14,5 +16,29 @@
 #sudo rpm -qa | grep -i shellcheck
 
 Q 4. Write a script to print prime no.?
+#!/bin/bash
+echo -e "Enter Number: \c"
+read n
+for((i=2; i<=$n/2; i++))
+do
+  ans=$(( n%i ))
+  if [ $ans -eq 0 ]
+  then
+    echo "$n is not a prime number."
+    exit 0
+  fi
+done
+echo "$n is a prime number."
+
+5. why do exit codes range from 0- 255?
+   0     --> successful
+   (1-255)  --> failure
+it is stored in 1Byte - 8 bit -- (2**8 = 256)  -- 0 -255
+POSIX Standard - Portable OS Interface
+error 127 - command not found
+      128 + N (signal value)      siginit ( value 2 interrupt from keyboard) 
+    eg  128 + 9 ( sigkill value ) = 137
+
+
 
   
