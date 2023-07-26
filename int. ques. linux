@@ -19,6 +19,26 @@ Q 5. server is not coming up, troubleshoot.
 
 Q 6. NFS config file - /etc/exports file.
 
+7. Boot process in linux ?
+ BIOS - perform power on self test , handover to 1st sector
+ MBR - 1st sector of bootable device has instructions to boot
+       load boot loader to memory , handover to it
+GRUB- user see GUI , select kernel
+       loads kernel and initramfs file and hansover to kernel
+kernel -initramfs gets decompressed to load temp file system
+        loads driver from temp file to load actual file
+        mount partitions , initialize 1st process
+systemd - 1st process loaded with PID1 , brings up run level target
+
+8. single user mode in linux - 
+e -- rd.break
+mount -o remount,rw /sysroot
+chroot /sysroot
+passwd root  - root
+touch /.autorelabel
+exit 
+exit
+
 
 
 
