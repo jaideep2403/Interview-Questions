@@ -1,0 +1,7 @@
+Q. Why do we use Kubernetes?
+Q. componenents of control / woker plane?
+Q. What is "Crash Loop Backoff" error in kubernetes?
+Q. What is Replicaset and Replication Controller in Kubernetes?
+Q. How to enter into kubernetes cluster?
+kubectl describe --
+
