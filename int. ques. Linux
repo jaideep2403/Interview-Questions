@@ -1,5 +1,13 @@
-Q 1. What is kernel panic in linux? (kernel panic - not syncing)
-initramfs gets corrupted or deleted at the stage of recent OS patching/updates other causes, face kernel panic issue while booting time
+PORT NO?
+FTP - 21
+SSH - 22
+HTTP - 80
+HTTPS- 443
+DNS - 53
+grafana - 3000
+===============================================================================
+Q 1. What is kernel panic in Linux? (kernel panic - not syncing)
+initramfs gets corrupted or deleted at the stage of recent OS patching/updates other causes, face kernel panic issue while booting time.
 
 produce o/p --> cd /boot --> rm initramfs.img -->reboot 
 kernel panic -- initramfs not found and not syncing --reboot in rescue mode -- cd /boot
@@ -10,14 +18,37 @@ regenerate/ recreate initramfs
 reboot 
 -------------------------------------------------------
 Q 2. what is a process in Linux - program in execution
+Q. what is zombie and orphan process in linux?
 
 Q 3. what is run level in Linux - A run level is an operating state of an OS . Levels (0-6)
              Runlevels determine which programs can execute after the OS boots up.
 
+
+Scenario Based--
 Q 4. Linux folder is 100% filled, troubleshoot.
 Q 5. server is not coming up, troubleshoot.
+Q. "host is unreachable issue" , Troubleshoot?
+Q. server slowness/performance issue in linux , troubleshoot.
+Q. df -HT got stuck troubleshoot ( no load issue)   -->strace package
 
-Q 6. NFS config file - /etc/exports file.
+Q. diff between yum and rpm?  --> rpm install single pacakge , yum installs with all dependencies.
+Q. how to check who installed package and when ? --> yum history
+Q. install / un-install a package ? --> rpm -ivh <pack> , rpm -e <pack>
+
+ 
+Q. what is special user access in Linux ?  -->setfacl /setuid /setgid /stickybit 
+
+Q. what is swap memory in Linxu & how to configure it? (X2)
+
+Q. change permission of File ? 
+Q. How to create / extend a file system?
+Q. what is inode in Linux?
+
+Configure TLs certificates
+
+
+Q 6. NFS config file?   --> /etc/exports file.
+Q.where is local user password stored in linux ? --> /etc/shadow
 
 7. Boot process in linux ?
  BIOS - perform power on self test , handover to 1st sector
@@ -39,6 +70,6 @@ touch /.autorelabel
 exit 
 exit
 
-
+9.
 
 
