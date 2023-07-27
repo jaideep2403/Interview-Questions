@@ -1,3 +1,6 @@
-check docker logs
-creaate container
-what is an image
+Q. How to check docker logs of a container?
+Q. how to create a docker container?
+Q. What is a docker image ?
+Q. What is a dockerfile , how to create container from dockerfile?
+Q.check running containers in docker?
+
