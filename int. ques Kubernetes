@@ -5,3 +5,16 @@ Q. What is Replicaset and Replication Controller in Kubernetes?
 Q. How to enter into kubernetes cluster?
 kubectl describe --
 
+
+## Explore on
+Crash Loopbackoff 
+Failed Mount,
+Failed Scheduling,
+Run Container Error,
+Create Container Error,
+Image pull backoff
+Scheduling Disabled
+Error Validating Data
+Exceed Cpu limits
+probe failing
+FailedAttach Volume
