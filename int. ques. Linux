@@ -5,7 +5,17 @@ HTTP - 80
 HTTPS- 443
 DNS - 53
 grafana - 3000
+jenkins - 
 ===============================================================================
+flags in df - HT
+         -h: Human-readable output
+         -P: Portable output format
+          -T: Show the filesystem type
+  du - sch -
+    -s: Display only the total sum
+     -c: Display a grand total
+     -h: Human-readable output
+==================================================================================
 Q 1. What is kernel panic in Linux? (kernel panic - not syncing)
 initramfs gets corrupted or deleted at the stage of recent OS patching/updates other causes, face kernel panic issue while booting time.
 
