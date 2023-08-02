@@ -1,11 +1,8 @@
-PORT NO?
-FTP - 21
-SSH - 22
-HTTP - 80
-HTTPS- 443
+PORT NO? 
+FTP - 21        HTTP - 80       Grafana - 3000 
+SSH - 22        HTTPS- 443      Jenkins - 
 DNS - 53
-grafana - 3000
-jenkins - 
+DHCP - 
 ===============================================================================
 flags in df - HT
          -h: Human-readable output
@@ -36,9 +33,17 @@ Q 3. what is run level in Linux - A run level is an operating state of an OS . L
 
 Scenario Based--
 Q 4. Linux folder is 100% filled, troubleshoot.
+    sudo df -h 
+    du -sh* | sort -hr | head 
+
 Q 5. server is not coming up, troubleshoot.
-Q. "host is unreachable issue" , Troubleshoot?
+Q. "host is unreachable issue", Troubleshoot?
+
 Q. server slowness/performance issue in linux , troubleshoot.
+High CPU usage
+View CPU usage: top or htop
+Identify high CPU processes: ps -eo pid,ppid,%cpu,%mem,cmd --sort=-%cpu | head
+
 Q. df -HT got stuck troubleshoot ( no load issue)   -->strace package
 
 Q. diff between yum and rpm?  --> rpm install single pacakge , yum installs with all dependencies.
@@ -80,6 +85,5 @@ touch /.autorelabel
 exit 
 exit
 
-9.
 
 
