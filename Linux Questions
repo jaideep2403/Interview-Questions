@@ -1,0 +1,76 @@
+Q. What is a swap space?  
+Answer :A swap space is a certain amount of space used by Linux to temporarily hold some programs  that are running concurrently.
+This happens when RAM does not have enough memory to hold all  programs that are executing.  
+
+Q. Give me some security monitoring related commands. 
+Answer: lsof, netstat, top, ps -ef, tail, last, tcpdump, sestatus, history, w. 
+
+Q. What is the purpose of the swapon command?  
+Answer :swapon command is used to activate a already created swap partition. It cannot be used to create a new swap partition.
+
+#rpm -ivh <package name>  -- > install a package
+#rpm -evh <package name>  --> remove a package
+#rpm -Uvh <package name>  --> update a package
+
+Q. What fstab file do?  
+Answer :The fstab file is used to automatically mount file systems. 
+
+.bash_profile -- provide login initialization commands
+.bash_logout -- provide logout functions
+.bashrc -- shell config commands
+
+Q. runlevel , single user mode
+Q. what is the difference between service and process.?
+
+Q. what is stored in "/etc/shadow"? 
+contains encrypted password as well as other information such as account or password expiration  values, etc.
+The /etc/shadow file is readable only by the root account and is therefore less of a security  risk 
+
+incremental backup -- backup the files that have changed since last backup
+
+Q. Which utility could you use to repair the corrupted file system?  
+Answer :You can use fsck to repair the corrupted file system. 
+
+Q. What is a command to display top 10 users who are using huge space?  Answer: du -sh /home/* | sort -r | head -10  
+Q. How do find all failed login attempts via ssh?  Answer: tail -f /var/log/secure | grep Failed  
+
+uid/gid of root user -- 0
+view crontab for bob  -- crontab -lu Bob
+
+home directory -- default working dir. when user logs in
+working dir -- user's current dir.
+
+NFS - Network File system -- share the file over the network
+Network monitoring tools - ping, traceroute , tcpdump , ntop
+DHCP - remotely assign IP sddress to machines during installation process
+
+cron - schedule and execute to run at same time
+AT - schedule / run the task only once 
+
+Q.How do check the status of VERITAS Cluster Server?  Answer: hastatus –sum 
+
+hardlinks have the same inode no.
+
+Q. difference between swap partition and swap file.
+
+file not deleted by root/normal user 
+chattr -i <file name>
+rm -rf file
+
+Q. how many interfaces are working -- ifconfig 
+195. In my linux machine, i lost /etc/passwd file and /etc/shadow file, then how can i recover  it?  Answer: Normally in linux we must have backup by default for /etc/passwd and /etc/shadow files  /etc/passwd —> /etc/passwd-  /etc/shadow —> /etc/shadowfrom there we can copy or restore. If both are not available. Then follow below steps:  1. reboot  2. Single user mode [single init=/bin/bash]  3. pwconv  4. check /etc/passwd and /etc/shadow files are there  5. sync  6. init 3 or reboot with init 3 
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
