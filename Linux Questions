@@ -29,7 +29,7 @@ The /etc/shadow file is readable only by the root account and is therefore less 
 incremental backup -- backup the files that have changed since last backup
 
 Q. Which utility could you use to repair the corrupted file system?  
-Answer :You can use fsck to repair the corrupted file system. 
+Answer:You can use fsck to repair the corrupted file system. 
 
 Q. What is a command to display top 10 users who are using huge space?  Answer: du -sh /home/* | sort -r | head -10  
 Q. How do find all failed login attempts via ssh?  Answer: tail -f /var/log/secure | grep Failed  
@@ -58,7 +58,23 @@ chattr -i <file name>
 rm -rf file
 
 Q. how many interfaces are working -- ifconfig 
-195. In my linux machine, i lost /etc/passwd file and /etc/shadow file, then how can i recover  it?  Answer: Normally in linux we must have backup by default for /etc/passwd and /etc/shadow files  /etc/passwd —> /etc/passwd-  /etc/shadow —> /etc/shadowfrom there we can copy or restore. If both are not available. Then follow below steps:  1. reboot  2. Single user mode [single init=/bin/bash]  3. pwconv  4. check /etc/passwd and /etc/shadow files are there  5. sync  6. init 3 or reboot with init 3 
+195. In my linux machine, i lost /etc/passwd file and /etc/shadow file, then how can i recover  it? 
+Answer: Normally in linux we must have backup by default for /etc/passwd and /etc/shadow files  /etc/passwd —> /etc/passwd-  
+/etc/shadow —> /etc/shadowfrom there we can copy or restore. If both are not available. 
+Then follow below steps:  1. reboot  2. Single user mode [single init=/bin/bash]  3. pwconv  
+4. check /etc/passwd and /etc/shadow files are there  5. sync  6. init 3 or reboot with init 3 
+
+Q. how do you terminate an ongoing process?
+Answer :Every process in the system is identified by a unique process id or pid. Use the kill command  followed by the pid in order to terminate that process. To terminate all process at once, use kill 0. 
+
+Q. With respect to a Linux system’s RAM, how large should the swap file be?  
+Answer :Generally the size of the swap file should be twice the size of installed RAM. 
+
+Q.A user type 'cd ~ ' on command prompt, what this command will do?  Answer :This command will move user to his or her home directory. ~ represents home directory in  Linux.  295.A user comes to you and complain that his system start fine, but as soon as it is almost  loaded it reboot again. What is the most likely cause of the problem?  Answer :In the /etc/inittab file, the default runlevel is probably set to 6, which tells it to reboot right 
+
+
+
+
 
 
 
