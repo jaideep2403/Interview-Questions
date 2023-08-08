@@ -1,36 +1,41 @@
 PORT NO? 
 FTP - 21        HTTP - 80       Grafana - 3000 
-SSH - 22        HTTPS- 443      Jenkins - 
+SSH - 22        HTTPS- 443      Jenkins - 8080
 DNS - 53
 DHCP - 
-===============================================================================
-flags in df - HT
-         -h: Human-readable output
-         -P: Portable output format
-          -T: Show the filesystem type
-  du - sch -
-    -s: Display only the total sum
-     -c: Display a grand total
-     -h: Human-readable output
-==================================================================================
-Q 1. What is kernel panic in Linux? (kernel panic - not syncing)
-initramfs gets corrupted or deleted at the stage of recent OS patching/updates other causes, face kernel panic issue while booting time.
+========================================================================================================================================
+flags in df - HPT                                       du - sch*
+         -h: Human-readable output                        -s: Display only the total sum
+         -P: Portable output format                       -c: Display a grand total
+         -T: Show the filesystem type                     -h: Human-readable output
+=========================================================================================================================================
+Q 1. What is KERNEL PANIC Error in Linux? 
+-- initramfs file  gets corrupted or deleted at the stage of recent OS patching/updates other causes, face kernel panic issue while booting time. 
+After patching we receive new kernel packages , sometimes new kernel is not supported by our server
+Steps--
+1. Boot server in rescue mode, log in as root user.
+2. go to cd/boot, and create initramfs file. (check kernel release === #uname -r)
+3.create initramfs file #dracut initramfs-<uname-r_output>.img  <uname-r_output>            ----- (#uname -r output -- kernel release)
 
-produce o/p --> cd /boot --> rm initramfs.img -->reboot 
-kernel panic -- initramfs not found and not syncing --reboot in rescue mode -- cd /boot
-#rpmquery kernel
-regenerate/ recreate initramfs
-1.dracut command -  dracut -f initramfs-3.10.0-1160.el7.x86_64.img initramfs-3.10.0-1160.el7.x86_6
-2.mkinitrd command - 
+*If file present and got corrupted, (dracut command will give warning)      -- run dracut -f or dracut --force
+ dracut -f initramfs-<uname-r output>.img  <uname-r output>                   ------(create forcefully) or use mkinitrd
+mkinitrd --force initramfs-<uname-r output>.img  <uname-r output>
 reboot 
--------------------------------------------------------
-Q 2. what is a process in Linux - program in execution
-Q. what is zombie and orphan process in linux?
+if panic error is due to package downgrade kernel version or packages which is causing error.
+-----------------------------------------------------------------------------------------------------------------------------------------
+Q 2. what is a process in Linux? - program in execution
+Q. What is zombie and orphan process in Linux?
+zombie process- is a child process that has completed its execution but still has an entry in the process table, waiting for its parent process to collect the exit status. 
+                . The process entry in the process table is necessary to allow the parent to access the exit status and resource usage information of the terminated child process
+                Zombie processes do not consume any system resources other than the small amount of memory used for their process table entry. However, if a large number of zombie processes accumulate in the system, it can indicate a problem with the parent process not handling its child processes correctly.
+Orphan Process- An orphan process is a process whose parent process has terminated or finished before the child process. Orphan processes are inherited by the init process (process ID 1),
+               When the parent process of a child terminates before the child, the child process becomes an orphan. The init process takes over the role of the parent for the orphan process, and once the orphan process finishes its execution, it becomes a zombie until its exit status is collected by the init process.
+               Orphan processes typically don't cause issues with the system as they are immediately adopted by the init process. The init process automatically reaps the exit status of orphaned child processes, preventing them from becoming long-standing zombies.
 
 Q 3. what is run level in Linux - A run level is an operating state of an OS . Levels (0-6)
              Runlevels determine which programs can execute after the OS boots up.
 
-
+=========================================================================================================================================
 Scenario Based--
 Q 4. Linux folder is 100% filled, troubleshoot.
     sudo df -h 
@@ -45,10 +50,10 @@ View CPU usage: top or htop
 Identify high CPU processes: ps -eo pid,ppid,%cpu,%mem,cmd --sort=-%cpu | head
 
 Q. df -HT got stuck troubleshoot ( no load issue)   -->strace package
-
-Q. diff between yum and rpm?  --> rpm install single pacakge , yum installs with all dependencies.
+====================================================================================================================================
+Q. diff between yum and rpm?  --> rpm install single package, yum installs with all dependencies.
 Q. how to check who installed package and when ? --> yum history
-Q. install / un-install a package ? --> rpm -ivh <pack> , rpm -e <pack>
+Q. install/uninstall a package ? --> rpm -ivh <package_name> , rpm -e <package_name>
 
  
 Q. what is special user access in Linux ?  -->setfacl /setuid /setgid /stickybit 
@@ -58,22 +63,20 @@ Q. what is swap memory in Linxu & how to configure it? (X2)
 Q. change permission of File ? 
 Q. How to create / extend a file system?
 Q. what is inode in Linux?
+ inode contains important metadata about the file system object including file type, permissions, file size, timestamps, ownership
 
 Configure TLs certificates
 
 
 Q 6. NFS config file?   --> /etc/exports file.
-Q.where is local user password stored in linux ? --> /etc/shadow
+Q.where is the local user password stored in Linux? --> /etc/shadow
 
-7. Boot process in linux ?
- BIOS - perform power on self test , handover to 1st sector
- MBR - 1st sector of bootable device has instructions to boot
-       load boot loader to memory , handover to it
-GRUB- user see GUI , select kernel
-       loads kernel and initramfs file and hansover to kernel
-kernel -initramfs gets decompressed to load temp file system
-        loads driver from temp file to load actual file
-        mount partitions , initialize 1st process
+7. Boot process in Linux?
+BIOS - perform power-on self-test, handover to 1st sector of bootable device
+MBR - 1st sector of bootable device has instructions to boot,   load boot loader to memory, handover to it
+GRUB- user see GUI , select kernel , loads kernel and initramfs file, and handover to kernel
+kernel -initramfs gets decompressed to load temp file system, loads driver from temp file to load actual file
+        mounts partitions, initializes the  1st process
 systemd - 1st process loaded with PID1 , brings up run level target
 
 8. single user mode in linux - 
