@@ -1,0 +1,9 @@
+Q. How have you setup monitoring and alerting in your project?
+The Nimsoft Robot(agent) controls a number of monitoring probes. Each probe is responsible for monitoring a specific  part of system.
+Each monitoring probe configured to trigger alerts when thresholds are breached , forwarded to (Netcool) to generate incident tickets.
+Each probe is centrally configured to collect performance and capacity metrics which is forwarded to Capacity Database (KDB) and 
+visualized through Grafana.
+
+Q. which port does Grafana runs? --> 3000
+Q. where does Grafana get the data from? --> all metrics stored in KDB+ Database and visualized through Grafana
+Q. Which metrics do you check in Grafana dashboard? --> cpu , memory, disk , nic cards , system load 
